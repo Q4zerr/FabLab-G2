@@ -37,10 +37,10 @@
         <div class="menu">
           <ul>
             <li>
-              <a href="" class="menu-item active"><i class="fa-solid fa-chart-simple"></i> Statistics</a>
+              <a href="#" class="menu-item active stats"><i class="fa-solid fa-chart-simple"></i> Statistics</a>
             </li>
             <li>
-              <a href="" class="menu-item disabled"><i class="fa-solid fa-calendar-days"></i> Reservation</a>
+              <a href="#" class="menu-item disabled reservation"><i class="fa-solid fa-calendar-days"></i> Reservation</a>
             </li>
           </ul>
         </div>
@@ -59,10 +59,10 @@
       <div class="menu-mobile">
         <ul>
           <li>
-            <a href="" class="menu-item active"><i class="fa-solid fa-chart-simple"></i> Statistics</a>
+            <a href="#" class="menu-item active stats"><i class="fa-solid fa-chart-simple"></i> Statistics</a>
           </li>
           <li>
-            <a href="" class="menu-item disabled"><i class="fa-solid fa-calendar-days"></i> Reservation</a>
+            <a href="#" class="menu-item disabled reservation"><i class="fa-solid fa-calendar-days"></i> Reservation</a>
           </li>
         </ul>
       </div>
@@ -116,6 +116,46 @@
               <div class="chart-level" style="height: 55%"></div>
               <div class="chart-day">Friday</div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="reservation-part hidden">
+        <div class="dropdown-select">
+          <select name="dropdown" class="dropdown">
+            <option value="table" class="dropdown-value">Table</option>
+            <option value="room" class="dropdown-value">Room</option>
+          </select>
+        </div>
+        <div class="table-map">
+          <div class="part-disabled"></div>
+          <div class="part-disabled">
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
+          <div class="part-disabled"></div>
+          <div class="part-disabled">
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
+          <button class="table1 red"></button>
+          <button class="table2 green"></button>
+          <button class="table3 red"></button>
+          <button class="table4 green"></button>
+          <button class="table5 green"></button>
+          <button class="table6 red"></button>
+          <button class="table7 red"></button>
+          <button class="table8 green"></button>
+        </div>
+        <div class="room-map disabled">
+          <div class="part-disabled"></div>
+          <div class="part-disabled">
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
+          <div class="part-disabled"></div>
+          <div class="part-disabled available">
+            <div class="square green"></div>
+            <div class="square red"></div>
           </div>
         </div>
       </div>
