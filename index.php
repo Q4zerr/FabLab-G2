@@ -79,14 +79,24 @@
               <i class="fa-solid fa-circle-plus"></i>
               Busiest Day
             </div>
-            <div class="item-value">Monday</div>
+            <div class="item-value">
+              <?php
+                $busiestDay = getBusiestDay(1);
+                echo $busiestDay;
+               ?>
+            </div>
           </div>
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-circle-minus"></i>
               Least Busy Day
             </div>
-            <div class="item-value">Tuesday</div>
+            <div class="item-value">
+              <?php
+                $leastBusiestDay = getLeastBusiestDay(1);
+                echo $leastBusiestDay;
+              ?>
+            </div>
           </div>
           <div class="grid-item">
             <div class="item-title">
