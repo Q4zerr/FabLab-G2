@@ -121,35 +121,35 @@
             <button class="pagination-button previous"><i class="fa-solid fa-angle-left"></i></button>
             <button class="pagination-button next"><i class="fa-solid fa-angle-right"></i></button>
             <div class="stats-chart lundi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Lundi', 1);
+            ?>
             </div>
-            <div class="stats-chart mardi" >
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
-            <div class="stats-chart mercredi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
-            <div class="stats-chart jeudi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
-            <div class="stats-chart vendredi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
+        <div class="stats-chart mardi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Mardi', 1);
+            ?>
+        </div>
+        <div class="stats-chart mercredi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Mercredi', 1);
+            ?>
+        </div>
+        <div class="stats-chart jeudi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Jeudi', 1);
+            ?>
+        </div>
+        <div class="stats-chart vendredi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Vendredi', 1);
+            ?>
+        </div>
         </div>
       </div>
       <div class="reservation-part hidden">
