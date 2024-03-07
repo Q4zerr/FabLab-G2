@@ -11,6 +11,7 @@
         return $response_data;
     }
 
+
     function getStatsDay($jour, $campus_id) {
         $currentHour = getCurrentHour();
         $currentDay = getCurrentDay();
@@ -31,6 +32,27 @@
         }
     }
 
+    function getActualValueFromDatabase($jour, $heure, $campus_id) {
+        // Vérifier si c'est l'heure actuelle
+        $currentHour = date('H');
+        $isCurrentHour = ($heure === substr($currentHour, 0, -1));
+    
+        if ($isCurrentHour) {
+            // Utiliser le lien pour obtenir le nombre total d'étudiants
+            $totalEtudiantUrl = "http://45.13.119.138:8000/total_etudiant/{$campus_id}";
+            $json_data = file_get_contents($totalEtudiantUrl);
+            $response_data = json_decode($json_data);
+    
+            return isset($response_data->nombre_etudiant) ? $response_data->nombre_etudiant : 0;
+        }
+    
+        // Si ce n'est pas l'heure actuelle, obtenir la fréquence normale
+        $frequenceUrl = "http://45.13.119.138:8000/frequence/jour/$jour/heure/$heure/campus/$campus_id";
+        $json_data = file_get_contents($frequenceUrl);
+        $response_data = json_decode($json_data);
+    
+        return isset($response_data->frequence_etudiant) ? $response_data->frequence_etudiant : 0;
+    }
 
     function getCurrentDay() {
         $currentDate = date('Y-m-d');
@@ -54,6 +76,15 @@
     
         $currentHour = date('H');
         return $currentHour . 'h';
+    }
+
+    function getRandomValue(){
+        $st_num=1;
+        $end_num=100;
+        $mul=1000000;
+
+        $randomNumber = mt_rand($st_num*$mul,$end_num*$mul)/$mul;
+        return round($randomNumber, 2);
     }
 
     function getBusiestDay($campus_id) {
