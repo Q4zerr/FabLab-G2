@@ -40,6 +40,8 @@
     
             $hourWithSuffix = $hour . 'h';
     
+
+            
             echo '<div class="chart ' . $chartClass . '">';
             echo '  <div class="chart-level" style="height: ' . $actualValue . '%"></div>';
             echo '  <div class="chart-day">' . $hourWithSuffix . '</div>';
@@ -55,11 +57,22 @@
         return isset($response_data->frequence_etudiant) ? $response_data->frequence_etudiant : 0;
     }
 
-    function getCurrentDay(){
+    function getCurrentDay() {
         $currentDate = date('Y-m-d');
-        $currentDay = date('l', strtotime($currentDate));
-
-        return $currentDay;
+        $currentDay = ucfirst(strftime('%A', strtotime($currentDate)));
+    
+        // Convert English day names to French
+        $translations = [
+            'Monday' => 'Lundi',
+            'Tuesday' => 'Mardi',
+            'Wednesday' => 'Mercredi',
+            'Thursday' => 'Jeudi',
+            'Friday' => 'Vendredi',
+            'Saturday' => 'Samedi',
+            'Sunday' => 'Dimanche',
+        ];
+    
+        return isset($translations[$currentDay]) ? $translations[$currentDay] : $currentDay;
     }
 
     function getCurrentHour() {
