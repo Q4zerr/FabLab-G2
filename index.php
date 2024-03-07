@@ -101,7 +101,7 @@
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-user-large"></i>
-              Number People
+              Amount of Students
             </div>
             <div class="item-value" id="studentCount">
                 <?php
