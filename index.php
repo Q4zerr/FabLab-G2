@@ -108,10 +108,10 @@
                         <span>Jour :</span>
                         <span class="day"></span>
                     </div>
-                    <div>
+                    <!-- <div>
                         <span>Attendance Rates :</span>
                         <span class="frequentation-level">Crowded</span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="frequentation-place">
                     <button class="link-place active">Next-U Café</button>
@@ -121,26 +121,31 @@
             <button class="pagination-button previous"><i class="fa-solid fa-angle-left"></i></button>
             <button class="pagination-button next"><i class="fa-solid fa-angle-right"></i></button>
             <div class="stats-chart lundi">
+                <span class="maximum"></span>
                 <?php
                     getStatsDay();
                 ?>
             </div>
             <div class="stats-chart mardi" >
+                <span class="maximum"></span>
                 <?php
                     getStatsDay();
                 ?>
             </div>
             <div class="stats-chart mercredi">
+                <span class="maximum"></span>
                 <?php
                     getStatsDay();
                 ?>
             </div>
             <div class="stats-chart jeudi">
+                <span class="maximum"></span>
                 <?php
                     getStatsDay();
                 ?>
             </div>
             <div class="stats-chart vendredi">
+                <span class="maximum"></span>
                 <?php
                     getStatsDay();
                 ?>

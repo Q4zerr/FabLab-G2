@@ -394,12 +394,20 @@ body {
   transform: translate(0%, -50%);
 }
 .stats-main .stats-chart {
+  position: relative;
   display: flex;
   justify-content: center;
   height: 43vh;
   max-height: 550px;
   min-height: 370px;
   gap: 1.75rem;
+}
+.stats-main .stats-chart .maximum{
+  position: absolute;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--blue);
 }
 .stats-main .stats-chart .chart {
   display: flex;

@@ -90,24 +90,6 @@ dropDown.addEventListener("change", () => {
   }
 });
 
-/*Get Frequentation Level*/
-const actualChart = document.querySelector('.chart.actual .chart-level');
-const styleAttribute = actualChart.getAttribute('style');
-let textLevel = "";
-
-// Utilise une expression régulière pour extraire la valeur flottante (nombre décimal)
-const matchResult = styleAttribute.match(/height:\s*([\d.]+)%/);
-
-if (matchResult) {
-  // Conversion la chaîne en nombre flottant
-  const floatValue = parseFloat(matchResult[1]);
-  switch(floatValue){
-    case floatValue > 0 && floatValue < 20:
-
-    break;
-  }
-}
-
 $(document).ready(function() {
   var daysOfWeek = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'];
   
@@ -121,8 +103,8 @@ $(document).ready(function() {
     $('.stats-chart').hide();
     $('.' + daysOfWeek[currentDayIndex]).show();
 
-    $('.day').text(daysOfWeek[currentDayIndex]).addClass('day');
-    console.log(daysOfWeek[currentDayIndex]);
+    daysOfWeekCapitalize = daysOfWeek[currentDayIndex].charAt(0).toUpperCase() + daysOfWeek[currentDayIndex].substring(1);
+    $('.day').text(daysOfWeekCapitalize).addClass('day');
   }
 
   updateDayContent();
