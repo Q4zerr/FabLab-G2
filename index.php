@@ -103,12 +103,17 @@
               <i class="fa-solid fa-user-large"></i>
               Number People
             </div>
-            <div class="item-value">
+            <div class="item-value" id="studentCount">
                 <?php
                     $numberStudent = getNbStudent('1');
                     echo $numberStudent->nombre_etudiant;
                 ?>
             </div>
+            <script src="assets/js/updateStudentCount.js"></script>
+              <!-- <script>
+                  // Met à jour toutes les 5 secondes (5000 millisecondes)
+                  setInterval(updateStudentCount, 5000);
+              </script> -->
           </div>
         </div>
         <div class="stats-main">
