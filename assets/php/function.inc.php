@@ -68,8 +68,6 @@
             'Wednesday' => 'Mercredi',
             'Thursday' => 'Jeudi',
             'Friday' => 'Vendredi',
-            'Saturday' => 'Samedi',
-            'Sunday' => 'Dimanche',
         ];
     
         return isset($translations[$currentDay]) ? $translations[$currentDay] : $currentDay;
