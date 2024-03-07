@@ -103,11 +103,8 @@
               <i class="fa-solid fa-user-large"></i>
               Amount of Students
             </div>
-            <div class="item-value" id="studentCount">
-                <?php
-                    $numberStudent = getNbStudent('1');
-                    echo $numberStudent->nombre_etudiant;
-                ?>
+            <div class="item-value" id="studentCount1">
+              <!-- Ici il faut changer l'id par 2 pour changer de campus -->
             </div>
             <script src="assets/js/updateStudentCount.js"></script>
               <!-- <script>
