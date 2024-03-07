@@ -24,14 +24,14 @@
     <title>Fullie</title>
   </head>
   <body>
-    <!-- <section class="loader">
+    <section class="loader">
       <div class="mid-part"></div>
       <div class="loader-content">
         <img src="assets/img/logo_fullie128.png" alt="Logo Fullie" />
         <span class="loader-title">Fullie</span>
       </div>
       <div class="mid-part"></div>
-    </section> -->
+    </section>
     <section class="dashboard">
       <div class="navigation">
         <div class="logo">
