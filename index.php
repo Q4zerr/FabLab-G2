@@ -1,8 +1,13 @@
+<?php
+    require_once 'assets/php/function.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link with Favicon -->
+    <link rel="icon" href="assets/img/logo_fullie_white.ico" />
     <!-- Link with stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Link with Fredoka Font -->
@@ -15,17 +20,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@103.4,300..700&family=Varela+Round&display=swap" rel="stylesheet" />
     <!-- Link with Fontawesome -->
     <script src="https://kit.fontawesome.com/ed61ff2ae5.js" crossorigin="anonymous"></script>
-    <title>Capteur Entrée/Sortie</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Fullie</title>
   </head>
   <body>
-    <section class="loader">
+    <!-- <section class="loader">
       <div class="mid-part"></div>
       <div class="loader-content">
         <img src="assets/img/logo_fullie128.png" alt="Logo Fullie" />
         <span class="loader-title">Fullie</span>
       </div>
       <div class="mid-part"></div>
-    </section>
+    </section> -->
     <section class="dashboard">
       <div class="navigation">
         <div class="logo">
@@ -87,36 +93,58 @@
               <i class="fa-solid fa-user-large"></i>
               Number People
             </div>
-            <div class="item-value">+34</div>
+            <div class="item-value">
+                <?php
+                    $numberStudent = getNbStudent('1');
+                    echo $numberStudent->nombre_etudiant;
+                ?>
+            </div>
           </div>
         </div>
         <div class="stats-main">
-          <div class="stats-frequentation">
-            <span>Attendance Rates</span>
-            <span class="frequentation-level">Crowded</span>
-          </div>
-          <div class="stats-chart">
-            <div class="chart">
-              <div class="chart-level" style="height: 25%"></div>
-              <div class="chart-day">Monday</div>
+            <div class="stats-frequentation">
+                <div class="stats-content">
+                    <div>
+                        <span>Jour :</span>
+                        <span class="day"></span>
+                    </div>
+                    <div>
+                        <span>Attendance Rates :</span>
+                        <span class="frequentation-level">Crowded</span>
+                    </div>
+                </div>
+                <div class="frequentation-place">
+                    <button class="link-place active">Next-U Café</button>
+                    <button class="link-place">Campus Lyon</button>
+                </div>
             </div>
-            <div class="chart">
-              <div class="chart-level" style="height: 45%"></div>
-              <div class="chart-day">Tuesday</div>
+            <button class="pagination-button previous"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="pagination-button next"><i class="fa-solid fa-angle-right"></i></button>
+            <div class="stats-chart lundi">
+                <?php
+                    getStatsDay();
+                ?>
             </div>
-            <div class="chart actual">
-              <div class="chart-level" style="height: 75%"></div>
-              <div class="chart-day">Wednesday</div>
+            <div class="stats-chart mardi" >
+                <?php
+                    getStatsDay();
+                ?>
             </div>
-            <div class="chart">
-              <div class="chart-level" style="height: 62%"></div>
-              <div class="chart-day">Thursday</div>
+            <div class="stats-chart mercredi">
+                <?php
+                    getStatsDay();
+                ?>
             </div>
-            <div class="chart">
-              <div class="chart-level" style="height: 55%"></div>
-              <div class="chart-day">Friday</div>
+            <div class="stats-chart jeudi">
+                <?php
+                    getStatsDay();
+                ?>
             </div>
-          </div>
+            <div class="stats-chart vendredi">
+                <?php
+                    getStatsDay();
+                ?>
+            </div>
         </div>
       </div>
       <div class="reservation-part hidden">

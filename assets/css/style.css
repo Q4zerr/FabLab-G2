@@ -18,7 +18,8 @@
   --bold: 600;
 }
 body {
-  height: 100vh;
+  /* height: 100vh; */
+  height:100%;
   width: 100%;
 }
 .loader {
@@ -35,7 +36,7 @@ body {
   height: 100%;
   width: 110%;
   background-color: var(--white);
-  animation: reveal 2s linear forwards;
+  animation: reveal 2s ease-in-out forwards;
   animation-delay: 3s;
 }
 .loader .mid-part:first-child {
@@ -97,9 +98,11 @@ body {
   display: flex;
   justify-content: center;
 }
-.dashboard .navigation,
 .dashboard .statistics {
   height: 100%;
+}
+.dashboard .navigation{
+  height: auto;
 }
 .dashboard .navigation {
   z-index: 2;
@@ -304,6 +307,7 @@ body {
   font-weight: var(--semibold);
 }
 .statistics .stats-main {
+  position: relative;
   width: 100%;
   background-color: var(--white);
   border-radius: 0.5rem;
@@ -315,19 +319,83 @@ body {
 }
 .stats-main .stats-frequentation {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.stats-main .stats-frequentation .stats-content{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
 }
-.stats-main .stats-frequentation span:first-child {
+.stats-main .stats-frequentation .stats-content div{
+  display: flex;
+  flex-direction: column;
+}
+.stats-main .stats-frequentation .frequentation-place{
+  display: flex;
+  gap: 1rem;
+}
+.stats-main .stats-frequentation .frequentation-place .link-place{
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--black);
+  outline: none;
+  background-color: var(--white);
   font-size: 1.15rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--black);
+  transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
 }
-.stats-main .stats-frequentation .frequentation-level {
-  font-size: 1.75rem;
+.stats-main .stats-frequentation .frequentation-place .link-place:hover{
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  color: var(--white);
+}
+.stats-main .stats-frequentation .frequentation-place .link-place.active{
+  border: 1px solid var(--blue);
+  background-color: var(--blue);
+  color: var(--white);
+}
+.stats-main .stats-frequentation span:nth-child(2) {
+  font-size: 1.25rem;
   font-weight: var(--semibold);
+}
+.stats-main .pagination-button{
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--blue);
+  transition: all .2s ease-in-out;
+  background-color: unset;
+  outline: none;
+  cursor: pointer;
+}
+.stats-main .pagination-button:hover{
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.stats-main .pagination-button.previous{
+  left: 0.5rem;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.stats-main .pagination-button.next{
+  right: 0.5rem;
+  top: 50%;
+  transform: translate(0%, -50%);
 }
 .stats-main .stats-chart {
   display: flex;
+  justify-content: center;
   height: 43vh;
   max-height: 550px;
   min-height: 370px;
@@ -339,7 +407,7 @@ body {
   justify-content: end;
   align-items: center;
   gap: 0.75rem;
-  width: 7%;
+  width: 10%;
 }
 .stats-main .stats-chart .chart .chart-level {
   width: 100%;
@@ -356,7 +424,7 @@ body {
 /*MEDIA QUERIES*/
 @media screen and (max-width: 1350px) {
   .stats-main .stats-chart .chart {
-    width: 10%;
+    width: 12%;
   }
 }
 @media screen and (max-width: 1150px) {
@@ -373,7 +441,7 @@ body {
     padding: 2.35rem 1.75rem;
   }
   .statistics .stats-main {
-    padding: 2.35rem 3rem;
+    padding: 2.35rem 5rem;
   }
   .statistics .stats-grid {
     gap: 1.5rem;
@@ -401,6 +469,11 @@ body {
     width: 75%;
     padding: 1.75rem 1.25rem;
     gap: 1.5rem;
+  }
+  .stats-main .pagination-button{
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 870px) {
@@ -442,6 +515,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+@media screen and (max-width: 575px){
+  .dashboard .statistics{
+    width: 100%;
+  }
+  .stats-main .stats-chart .chart .chart-day{
+    font-size: 0.85rem;
+  }
+}
+@media screen and (max-width: 430px){
+  .stats-main .stats-chart{
+    gap: 1.75rem;
   }
 }
 /*MEDIA QUERIES*/

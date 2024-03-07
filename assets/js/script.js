@@ -37,9 +37,11 @@ links.forEach((link) => {
     if (link.classList.contains("reservation")) {
       statsPart.classList.add("hidden");
       reservationPart.classList.remove("hidden");
+      document.querySelector('body').style = "height: 100vh;";
     } else {
       statsPart.classList.remove("hidden");
       reservationPart.classList.add("hidden");
+      document.querySelector('body').style = "height: auto;";
     }
   });
 });
@@ -86,4 +88,52 @@ dropDown.addEventListener("change", () => {
     roomMap.classList.remove("disabled");
     tableMap.classList.add("disabled");
   }
+});
+
+/*Get Frequentation Level*/
+const actualChart = document.querySelector('.chart.actual .chart-level');
+const styleAttribute = actualChart.getAttribute('style');
+let textLevel = "";
+
+// Utilise une expression régulière pour extraire la valeur flottante (nombre décimal)
+const matchResult = styleAttribute.match(/height:\s*([\d.]+)%/);
+
+if (matchResult) {
+  // Conversion la chaîne en nombre flottant
+  const floatValue = parseFloat(matchResult[1]);
+  switch(floatValue){
+    case floatValue > 0 && floatValue < 20:
+
+    break;
+  }
+}
+
+$(document).ready(function() {
+  var daysOfWeek = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'];
+  
+  var currentDayIndex = new Date().getDay() - 1;
+  
+  if (currentDayIndex === -1 || currentDayIndex === 5) {
+    currentDayIndex = 0;
+  }
+
+  function updateDayContent() {
+    $('.stats-chart').hide();
+    $('.' + daysOfWeek[currentDayIndex]).show();
+
+    $('.day').text(daysOfWeek[currentDayIndex]).addClass('day');
+    console.log(daysOfWeek[currentDayIndex]);
+  }
+
+  updateDayContent();
+
+  $('.pagination-button.previous').click(function() {
+    currentDayIndex = (currentDayIndex - 1 + daysOfWeek.length) % daysOfWeek.length;
+    updateDayContent();
+  });
+
+  $('.pagination-button.next').click(function() {
+    currentDayIndex = (currentDayIndex + 1) % daysOfWeek.length;
+    updateDayContent();
+  });
 });
