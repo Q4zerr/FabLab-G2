@@ -30,58 +30,12 @@
             echo '</div>';
         }
     }
-
-    // function getActualValueFromDatabase($jour, $heure, $campus_id) {
-    //     // Vérifier si c'est l'heure actuelle
-    //     $currentHour = date('H');
-    //     $isCurrentHour = ($heure === substr($currentHour, 0, -1));
-    
-    //     if ($isCurrentHour) {
-    //         // Utiliser le lien pour obtenir le nombre total d'étudiants
-    //         $totalEtudiantUrl = "http://45.13.119.138:8000/total_etudiant/{$campus_id}";
-    //         $json_data = file_get_contents($totalEtudiantUrl);
-    //         $response_data = json_decode($json_data);
-    
-    //         return isset($response_data->nombre_etudiant) ? $response_data->nombre_etudiant : 0;
-    //     }
-    
-    //     // Si ce n'est pas l'heure actuelle, obtenir la fréquence normale
-    //     $frequenceUrl = "http://45.13.119.138:8000/frequence/jour/$jour/heure/$heure/campus/$campus_id";
-    //     $json_data = file_get_contents($frequenceUrl);
-    //     $response_data = json_decode($json_data);
-    
-    //     return isset($response_data->frequence_etudiant) ? $response_data->frequence_etudiant : 0;
-    // }
-
-//semi fonctionnel
-
-    // function getActualValueFromDatabase($jour, $heure, $campus_id) {
-    //     // Vérifier si c'est l'heure actuelle
-    //     $currentHour = getCurrentHour();
-    //     $isCurrentHour = ($heure == substr($currentHour, 0, -1));
-    
-    //     if ($isCurrentHour) {
-    //         // Utiliser le lien pour obtenir le nombre total d'étudiants
-    //         $totalEtudiantUrl = "http://45.13.119.138:8000/total_etudiant/{$campus_id}";
-    //         $json_data = @file_get_contents($totalEtudiantUrl); // Utilise @ pour éviter les avertissements
-    //         $response_data = json_decode($json_data);
-    
-    //         return isset($response_data->nombre_etudiant) ? $response_data->nombre_etudiant : 0;
-    //     } else {
-    
-    //     // Si ce n'est pas l'heure actuelle, obtenir la fréquence normale
-    //     $frequenceUrl = "http://45.13.119.138:8000/frequence/jour/$jour/heure/$heure/campus/$campus_id";
-    //     $json_data = @file_get_contents($frequenceUrl); // Utilise @ pour éviter les avertissements
-    //     $response_data = json_decode($json_data);
-    
-    //     return isset($response_data->frequence_etudiant) ? $response_data->frequence_etudiant : 0;
-    //     }
-    // }
     
     function getActualValueFromDatabase($jour, $heure, $campus_id) {
         // Vérifier si c'est l'heure actuelle
         $currentHour = getCurrentHour();
-        $isCurrentHour = ($heure == substr($currentHour, 0, -1));
+        $isCurrentHour = (intval($heure) == intval(substr($currentHour, 0, -1)));
+        // $isCurrentHour = ($heure == substr($currentHour, 0, -1));
     
         // Utiliser le lien pour obtenir le nombre total d'étudiants
         $totalEtudiantUrl = "http://45.13.119.138:8000/total_etudiant/{$campus_id}";
@@ -116,7 +70,6 @@
         $currentDate = date('Y-m-d');
         $currentDay = ucfirst(strftime('%A', strtotime($currentDate)));
     
-        // Convert English day names to French
         $translations = [
             'Monday' => 'Lundi',
             'Tuesday' => 'Mardi',
