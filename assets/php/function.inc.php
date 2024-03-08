@@ -33,7 +33,7 @@
     
     function getActualValueFromDatabase($jour, $heure, $campus_id) {
         // Vérifier si c'est l'heure actuelle
-        $currentHour = getCurrentHour();
+        $currentHour = intval(date('H'));
         $isCurrentHour = (intval($heure) == intval(substr($currentHour, 0, -1)));
         // $isCurrentHour = ($heure == substr($currentHour, 0, -1));
     
