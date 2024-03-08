@@ -43,10 +43,10 @@
         <div class="menu">
           <ul>
             <li>
-              <a href="#" class="menu-item active stats"><i class="fa-solid fa-chart-simple"></i> Statistics</a>
+              <a href="#" class="menu-item active stats"><i class="fa-solid fa-chart-simple"></i> Statistiques</a>
             </li>
             <li>
-              <a href="#" class="menu-item disabled reservation"><i class="fa-solid fa-calendar-days"></i> Reservation</a>
+              <a href="#" class="menu-item disabled reservation"><i class="fa-solid fa-calendar-days"></i> Réservation</a>
             </li>
           </ul>
         </div>
@@ -65,10 +65,10 @@
       <div class="menu-mobile">
         <ul>
           <li>
-            <a href="#" class="menu-item active stats"><i class="fa-solid fa-chart-simple"></i> Statistics</a>
+            <a href="#" class="menu-item active stats"><i class="fa-solid fa-chart-simple"></i> Statistiques</a>
           </li>
           <li>
-            <a href="#" class="menu-item disabled reservation"><i class="fa-solid fa-calendar-days"></i> Reservation</a>
+            <a href="#" class="menu-item disabled reservation"><i class="fa-solid fa-calendar-days"></i> Réservation</a>
           </li>
         </ul>
       </div>
@@ -77,7 +77,7 @@
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-circle-plus"></i>
-              Busiest Day
+              Jour le plus fréquenté
             </div>
             <div class="item-value">
               <?php
@@ -89,7 +89,7 @@
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-circle-minus"></i>
-              Least Busy Day
+              Jour le moins fréquenté
             </div>
             <div class="item-value">
               <?php
@@ -101,7 +101,7 @@
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-user-large"></i>
-              Amount of Students
+              Nombre actuel d'étudiants
             </div>
             <div class="item-value" id="studentCount1">
               <!-- Ici il faut changer l'id par 2 pour changer de campus -->
@@ -115,20 +115,38 @@
         </div>
         <div class="stats-main">
             <div class="stats-frequentation">
+              <div class="stats-group">
                 <div class="stats-content">
                     <div>
                         <span>Jour :</span>
                         <span class="day"></span>
                     </div>
-                    <!-- <div>
-                        <span>Attendance Rates :</span>
-                        <span class="frequentation-level">Crowded</span>
-                    </div> -->
                 </div>
                 <div class="frequentation-place">
                     <button class="link-place active">Next-U Café</button>
                     <button class="link-place">Campus Lyon</button>
                 </div>
+              </div>
+              <div class="stats-legend">
+                <div>
+                  <div class="square first"></div>
+                  <span class="text">Prévisionnelle</span>
+                </div>
+                <div class="group">
+                  <div>
+                    <div class="square second"></div>
+                    <span class="text">Peu fréquenté</span>
+                  </div>
+                  <div>
+                    <div class="square third"></div>
+                    <span class="text">Moyennement fréquenté</span>
+                  </div>
+                  <div>
+                    <div class="square fourth"></div>
+                    <span class="text">Plein</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <button class="pagination-button previous"><i class="fa-solid fa-angle-left"></i></button>
             <button class="pagination-button next"><i class="fa-solid fa-angle-right"></i></button>
