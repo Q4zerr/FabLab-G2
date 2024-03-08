@@ -19,9 +19,19 @@
     
         foreach ($hoursOfDay as $hour) {
             $actualValue = getActualValueFromDatabase($jour, $hour, $campus_id);
-            $chartClass = (intval($hour) === intval(substr($currentHour, 0, -1)) && $jour === $currentDay) ? 'actual' : '';
+
+            if (intval($hour) === intval(substr($currentHour, 0, -1)) && $jour === $currentDay) {
+                if ($actualValue < 30) {
+                    $chartClass = 'actual1';
+                } elseif ($actualValue < 70) {
+                    $chartClass = 'actual2';
+                } else {
+                    $chartClass = 'actual3';
+                }
+            } else {
+                $chartClass = '';
+            }
             $hourWithSuffix = $hour . 'h';
-    
 
             
             echo '<div class="chart ' . $chartClass . '">';

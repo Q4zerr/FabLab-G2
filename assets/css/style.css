@@ -471,8 +471,16 @@ body {
 .stats-main .stats-chart .chart .chart-level:hover {
   background-color: var(--blue-hover);
 }
-.stats-main .stats-chart .chart.actual .chart-level {
-  background-color: var(--blue);
+.stats-main .stats-chart .chart.actual1 .chart-level {
+  background-color: var(--green);
+}
+
+.stats-main .stats-chart .chart.actual2 .chart-level {
+  background-color: var(--orange);
+}
+
+.stats-main .stats-chart .chart.actual3 .chart-level {
+  background-color: var(--red);
 }
 /*MEDIA QUERIES*/
 @media screen and (max-width: 1400px){
