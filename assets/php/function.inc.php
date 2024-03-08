@@ -34,7 +34,7 @@
     function getActualValueFromDatabase($jour, $heure, $campus_id) {
         // Vérifier si c'est l'heure actuelle
         $currentHour = intval(date('H'));
-        $isCurrentHour = (intval($heure) == intval(substr($currentHour, 0, -1)));
+        $isCurrentHour = (intval($heure) == intval(date('H')));
         // $isCurrentHour = ($heure == substr($currentHour, 0, -1));
     
         // Utiliser le lien pour obtenir le nombre total d'étudiants
@@ -44,7 +44,6 @@
         
         // Si c'est l'heure actuelle, retourner le nombre total d'étudiants
         if ($isCurrentHour) {
-            // Si la fréquence est disponible et différente de "false", ajouter le nombre d'étudiants à la fréquence
             if (isset($response_data->frequence_etudiant) && $response_data->frequence_etudiant !== "false") {
                 return $response_data->frequence_etudiant + (isset($response_data->nombre_etudiant) ? $response_data->nombre_etudiant : 0);
             } else {
