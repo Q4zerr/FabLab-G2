@@ -79,26 +79,38 @@
               <i class="fa-solid fa-circle-plus"></i>
               Busiest Day
             </div>
-            <div class="item-value">Monday</div>
+            <div class="item-value">
+              <?php
+                $busiestDay = getBusiestDay(1);
+                echo $busiestDay;
+               ?>
+            </div>
           </div>
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-circle-minus"></i>
               Least Busy Day
             </div>
-            <div class="item-value">Tuesday</div>
+            <div class="item-value">
+              <?php
+                $leastBusiestDay = getLeastBusiestDay(1);
+                echo $leastBusiestDay;
+              ?>
+            </div>
           </div>
           <div class="grid-item">
             <div class="item-title">
               <i class="fa-solid fa-user-large"></i>
-              Number People
+              Amount of Students
             </div>
-            <div class="item-value">
-                <?php
-                    $numberStudent = getNbStudent('1');
-                    echo $numberStudent->nombre_etudiant;
-                ?>
+            <div class="item-value" id="studentCount1">
+              <!-- Ici il faut changer l'id par 2 pour changer de campus -->
             </div>
+            <script src="assets/js/updateStudentCount.js"></script>
+              <!-- <script>
+                  // Met à jour toutes les 5 secondes (5000 millisecondes)
+                  setInterval(updateStudentCount, 5000);
+              </script> -->
           </div>
         </div>
         <div class="stats-main">
@@ -121,35 +133,35 @@
             <button class="pagination-button previous"><i class="fa-solid fa-angle-left"></i></button>
             <button class="pagination-button next"><i class="fa-solid fa-angle-right"></i></button>
             <div class="stats-chart lundi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Lundi', 1);
+            ?>
             </div>
-            <div class="stats-chart mardi" >
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
-            <div class="stats-chart mercredi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
-            <div class="stats-chart jeudi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
-            <div class="stats-chart vendredi">
-                <span class="maximum"></span>
-                <?php
-                    getStatsDay();
-                ?>
-            </div>
+        <div class="stats-chart mardi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Mardi', 1);
+            ?>
+        </div>
+        <div class="stats-chart mercredi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Mercredi', 1);
+            ?>
+        </div>
+        <div class="stats-chart jeudi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Jeudi', 1);
+            ?>
+        </div>
+        <div class="stats-chart vendredi">
+            <span class="maximum"></span>
+            <?php
+                getStatsDay('Vendredi', 1);
+            ?>
+        </div>
         </div>
       </div>
       <div class="reservation-part hidden">
