@@ -475,9 +475,29 @@ body {
   background-color: var(--blue);
 }
 /*MEDIA QUERIES*/
+@media screen and (max-width: 1400px){
+  .stats-main .stats-frequentation .stats-legend .group{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .stats-main .stats-frequentation{
+    gap: 1rem;
+  }
+  .stats-main .stats-frequentation .stats-group .frequentation-place{
+    gap: 0.5rem;
+  }
+  .stats-main .stats-frequentation .stats-group{
+    gap: 1.25rem;
+  }
+}
 @media screen and (max-width: 1350px) {
   .stats-main .stats-chart .chart {
     width: 12%;
+  }
+  .stats-main .stats-frequentation{
+    flex-direction: column;
+    align-items: start;
+    gap: 1.75rem;
   }
 }
 @media screen and (max-width: 1150px) {
@@ -581,6 +601,11 @@ body {
 @media screen and (max-width: 430px){
   .stats-main .stats-chart{
     gap: 1.75rem;
+  }
+}
+@media screen and (min-height: 930px){
+  body{
+    height: 100vh;
   }
 }
 /*MEDIA QUERIES*/
